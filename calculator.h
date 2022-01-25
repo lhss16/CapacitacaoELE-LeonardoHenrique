@@ -34,9 +34,9 @@ class Calculator
         input divide (input numberA, input numberB);    //x/y
         input mod(input numberA, input numberB);        //x%y
         input exp(input numberA, input numberB);        //x^y
-        input root(input numberA, input numberB);       //x^(1/y)
 
         //metodos privados com as operacoes de um operando
+        input root(input numberA);       //x^(1/2)
         input fatorial(input numberA);                  //x*(x-1)*(x-2)....*1
         input fibonacci(input numberA);                 //x(n-1) + x(n-2)
 };
