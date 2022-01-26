@@ -1,4 +1,3 @@
-#include <sstream>
 #include <cmath>
 #include "calculator.h"
 
