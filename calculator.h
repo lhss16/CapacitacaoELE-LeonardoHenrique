@@ -16,7 +16,7 @@ class Calculator
         Calculator(char operation, std::string numberA, std::string numberB);
         
         //metodo publico para calculo de uma operacao passada de um operando
-        int calc(char operation, int numberA);
+        unsigned int calc(char operation, unsigned int numberA);
         double calc(char operation, double numberA);
         //metodo publico para calculo de uma operacao passada de dois operandos
         int calc(char operation, int numberA, int numberB);
@@ -24,7 +24,7 @@ class Calculator
 
     private:
         //metodo privado que verifica se a entrada eh int (retorna true) ou double (retorna false)
-        bool verifyintIsInt(std::string numberA);
+        bool verifyIsInt(std::string numberA);
         
         //metodos privados com as operacoes de dois operandos
         int add (int numberA, int numberB);       //x+y

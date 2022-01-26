@@ -1,47 +1,55 @@
 #include <cmath>
 #include "calculator.h"
 
-template <typename input>
-Calculator<input>::Calculator(){}
+Calculator::Calculator(){}
 
-template <typename input>
-Calculator<input>::Calculator(char operation, std::string numberA)
+Calculator::Calculator(char operation, std::string numberA)
 {
     char validOperations[3] = {'f','r','c'};
     for(unsigned long int counter{0}; counter < 3; counter++)
     {
     }
-    if (verifyInputIsInt == true)
+    /*
+    if (verifyIsInt == true)
     {
             calc(operation, numberA);
-    }
+    }*/
 }
 
 //construtor que inicia realizando uma operacao com dois operandos
-template <typename input>
-Calculator<input>::Calculator(char operation, std::string numberA, std::string numberB)
+Calculator::Calculator(char operation, std::string numberA, std::string numberB)
 {
 
 }
 
 //metodo publico para calculo de uma operacao passada de um operando
-template <typename input>
-input Calculator<input>::calc(char operation, input numberA)
+unsigned int
+Calculator::calc(char operation, unsigned int numberA)
+{
+
+    
+}
+double
+Calculator::calc(char operation, double numberA)
 {
 
     
 }
 
 //metodo publico para calculo de uma operacao passada de dois operandos
-template <typename input>
-input Calculator<input>::calc(char operation, input numberA, input numberB)
+int
+Calculator::calc(char operation, int numberA, int numberB)
+{
+
+}
+double
+Calculator::calc(char operation, double numberA, double numberB)
 {
 
 }
 
 //metodo privado que verifica se a entrada eh int (retorna true) ou double (retorna false)
-template <typename input>
-bool Calculator<input>::verifyInputIsInt(std::string numberA)
+bool Calculator::verifyIsInt(std::string numberA)
 {
     for(unsigned long int counter{0}; counter < numberA.size(); counter++)
     {
@@ -54,62 +62,93 @@ bool Calculator<input>::verifyInputIsInt(std::string numberA)
 }
 
 //metodos privados com as operacoes de dois operandos
-template <typename input>
-input Calculator<input>::add (input numberA, input numberB)//x+y
+int
+Calculator::add(int numberA, int numberB)//x+y
 {
     return (numberA+numberB);
 }       
+double
+Calculator::add(double numberA, double numberB)//x+y
+{
+    return (numberA+numberB);
+}
 
-template <typename input>
-input Calculator<input>::sub (input numberA, input numberB)//x-y
+int
+Calculator::sub(int numberA, int numberB)//x-y
+{
+    return (numberA-numberB);
+}
+double
+Calculator::sub(double numberA, double numberB)//x-y
 {
     return (numberA-numberB);
 }
 
-template <typename input>
-input Calculator<input>::multiply (input numberA, input numberB)//x*y
+int 
+Calculator::multiply(int numberA, int numberB)//x*y
+{
+    return (numberA*numberB);
+}
+double 
+Calculator::multiply(double numberA, double numberB)//x*y
 {
     return (numberA*numberB);
 }
 
-template <typename input>
-input Calculator<input>::divide (input numberA, input numberB)//x/y
+int
+Calculator::divide (int numberA, int numberB)//x/y
+{
+    return (numberA/numberB);
+}
+double
+Calculator::divide (double numberA, double numberB)//x/y
 {
     return (numberA/numberB);
 }
 
-template <typename input>    
-input Calculator<input>::mod(input numberA, input numberB)//x%y
+int   
+Calculator::mod(int numberA, int numberB)//x%y
 {
     return (numberA%numberB);
 }
 
-template <typename input>
-input Calculator<input>::exp(input numberA, input numberB)//x^y
+int
+Calculator::exp(int numberA, int numberB)//x^y
+{
+    return (std::pow(numberA, numberB));
+}
+double
+Calculator::exp(double numberA, double numberB)//x^y
 {
     return (std::pow(numberA, numberB));
 }
 
 //metodos privados com as operacoes de um operando
-template <typename input>
-input Calculator<input>::fatorial(input numberA)//x*(x-1)*(x-2)....*1
+unsigned int
+Calculator::fatorial(unsigned int numberA)//x*(x-1)*(x-2)....*1
 {
-    input result{1};
-    for(input counter{numberA}; counter >= 1; counter--)
+    unsigned int result{1};
+    for(unsigned int counter{numberA}; counter >= 1; counter--)
     {
         result *= counter;
     }
     return result;
 }
 
-template <typename input>
-input Calculator<input>::root(input numberA)//x^(1/2)
+unsigned int
+Calculator::root(unsigned int numberA)//x^(1/2)
 {
     return (std::sqrt(numberA));
 }
 
-template <typename input>
-input Calculator<input>::fibonacci(input numberA) //x(n-1) + x(n-2)
+double
+Calculator::root(double numberA)//x^(1/2)
+{
+    return (std::sqrt(numberA));
+}
+
+unsigned int
+Calculator::fibonacci(unsigned int numberA) //x(n-1) + x(n-2)
 {
     if(numberA == 0)
         return 0;
