@@ -1,9 +1,26 @@
 #include<sstream>
 #include<iostream>
 #include<string>
-//#include "calculator.h"
+#include "calculator.h"
 
 using namespace std;
+
+template <class typeNumber>
+typeNumber evaluateNumber(typeNumber number)
+{
+    cin >> number;
+    if (cin.fail()) //corrige a entrada do usuario para que entre com um valor numerico
+    {
+        while (cin.fail())
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "Voce errou... Entre com o valor permitido! Por favor, entrar com uma opcao valida." << endl;
+            cin >> number;
+        }
+    }
+    return number; 
+}
 
 int
 main()
@@ -24,59 +41,103 @@ main()
         cout << "9 - Fibonacci" << endl;
         cout << "0 - Sair" << endl;
 
-        unsigned int optionIn{0};
-        cin >> optionIn;
-        if (cin.fail()) //corrige a entrada do usuario para que entre com um valor numerico
-		{
-		    while (cin.fail())
-           {
-                cin.clear();
-                cin.ignore();
-                cout << "Voce errou... Entre com o valor permitido! Por favor, entrar com uma opcao valida." << endl;
-                cin >> optionIn;
-            }
-        }
-
         bool respostaValida = false;
         string resposta;
+
+        unsigned int optionIn{0};
+        optionIn = evaluateNumber(optionIn);
 
         switch (optionIn)
         {
             case 1:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o primeiro numero da operacao: \n" << endl;
+                double numberA{0};
+                numberA = evaluateNumber(numberA);
+                cout << "Entre com o segundo numero da operacao: \n" << endl;
+                double numberB{0};
+                numberB = evaluateNumber(numberB);            
+                cout << numberA << "+" << numberB << " = " <<
+                calculadora.calc(numberA, '+', numberB) << endl;
                 break;
             case 2:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o primeiro numero da operacao: \n" << endl;
+                double numberA{0};
+                numberA = evaluateNumber(numberA);
+                cout << "Entre com o segundo numero da operacao: \n" << endl;
+                double numberB{0};
+                numberB = evaluateNumber(numberB);            
+                cout << numberA << "-" << numberB << " = " <<
+                calculadora.calc(numberA, '-', numberB) << endl;
                 break;
             case 3:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o primeiro numero da operacao: \n" << endl;
+                double numberA{0};
+                numberA = evaluateNumber(numberA);
+                cout << "Entre com o segundo numero da operacao: \n" << endl;
+                double numberB{0};
+                numberB = evaluateNumber(numberB);            
+                cout << numberA << "*" << numberB << " = " <<
+                calculadora.calc(numberA, '*', numberB) << endl;
                 break;
             case 4:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o primeiro numero da operacao: \n" << endl;
+                double numberA{0};
+                numberA = evaluateNumber(numberA);
+                cout << "Entre com o segundo numero da operacao: \n" << endl;
+                double numberB{0};
+                numberB = evaluateNumber(numberB);            
+                cout << numberA << "/" << numberB << " = " <<
+                calculadora.calc(numberA, '/', numberB) << endl;
                 break;
             case 5:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o primeiro numero da operacao: \n" << endl;
+                int numberA{0};
+                numberA = evaluateNumber(numberA);
+                cout << "Entre com o segundo numero da operacao: \n" << endl;
+                int numberB{0};
+                numberB = evaluateNumber(numberB);            
+                cout << numberA << "%" << numberB << " = " <<
+                calculadora.calc(numberA, '%', numberB) << endl;
                 break;
             case 6:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o primeiro numero da operacao: \n" << endl;
+                double numberA{0};
+                numberA = evaluateNumber(numberA);
+                cout << "Entre com o segundo numero da operacao: \n" << endl;
+                double numberB{0};
+                numberB = evaluateNumber(numberB);            
+                cout << numberA << "^(" << numberB << ") = " <<
+                calculadora.calc(numberA, '^', numberB) << endl;
                 break;
             case 7:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o numero da operacao: \n" << endl;
+                double numberA{0};
+                numberA = evaluateNumber(numberA);            
+                cout << numberA << "^(1/2)" << " = " <<
+                calculadora.calc(numberA, 'r') << endl;
                 break;
             case 8:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o numero da operacao: \n" << endl;
+                double numberA{0};
+                numberA = evaluateNumber(numberA);            
+                cout << numberA << "!" << " = " <<
+                calculadora.calc(numberA, '!') << endl;
                 break;
             case 9:
-                //Calculator calculadora;
-               // calculadora.calc()
+                Calculator calculadora;
+                cout << "Entre com o numero da operacao: \n" << endl;
+                double numberA{0};
+                numberA = evaluateNumber(numberA);            
+                cout << "Fibonacci(" << numberA  << ") = " <<
+                calculadora.calc(numberA, 'f') << endl;
                 break;
             case 0:
                 respostaValida = true;
