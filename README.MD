@@ -33,3 +33,6 @@ sistor1, LEDverm,LEDverm,LEDverm, LEDverd,LEDverd]
 precoPago = [0.7,1, 5, 100,74,2.5,0.1, 1,1,2,2,1]
 O objetivo final é apontar quantos erros foram encontrados na compra.
 Salve este arquivo como DesafioExtra-seunome.py
+
+O programa funciona utilizando uma classe calculadora que calcula os valores e sao passados para o programa.
+Essa classe calculadora é baseada em funcoes definidas no header operations.h. Este header tem funcoes templates para a calculadora, deixando o programa geral.
