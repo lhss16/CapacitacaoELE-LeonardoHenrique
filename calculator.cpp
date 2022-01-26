@@ -1,4 +1,5 @@
 #include <cmath>
+#include <limits>
 #include "calculator.h"
 
 //metodo publico para calculo de uma operacao passada de um operando
@@ -9,14 +10,19 @@ Calculator::calc(unsigned int numberA, char operation)
     {
         return fatorial(numberA); 
     }
-    if(operation == 'f')
+    else if(operation == 'f')
     {
         return fibonacci(numberA);
     }
-    if(operation == 'r')
+    else if(operation == 'r')
     {
         return root(numberA);
     }
+    else
+    {
+        return 0;
+    }  
+
 }
 double
 Calculator::calc(double numberA, char operation)
@@ -24,7 +30,11 @@ Calculator::calc(double numberA, char operation)
     if(operation == 'r')
     {
         return root(numberA);
-    }    
+    }
+    else
+    {
+        return 0;
+    }  
 }
 
 //metodo publico para calculo de uma operacao passada de dois operandos
@@ -35,26 +45,30 @@ Calculator::calc(int numberA, char operation, int numberB)
     {
         return add(numberA, numberB);
     }
-    if(operation == '-')
+    else if(operation == '-')
     {
         return sub(numberA, numberB);
     }
-    if(operation == '*')
+    else if(operation == '*')
     {
         return multiply(numberA, numberB);
     }
-    if(operation == '/')
+    else if(operation == '/')
     {
         return divide(numberA, numberB);
     }
-    if(operation == '%')
+    else if(operation == '%')
     {
         return mod(numberA, numberB);
     }
-    if(operation == '^')
+    else if(operation == '^')
     {
         return exp(numberA, numberB);
     }
+    else
+    {
+        return 0;
+    }  
 }
 double
 Calculator::calc(double numberA, char operation, double numberB)
@@ -63,22 +77,26 @@ Calculator::calc(double numberA, char operation, double numberB)
     {
         return add(numberA, numberB);
     }
-    if(operation == '-')
+    else if(operation == '-')
     {
         return sub(numberA, numberB);
     }
-    if(operation == '*')
+    else if(operation == '*')
     {
         return multiply(numberA, numberB);
     }
-    if(operation == '/')
+    else if(operation == '/')
     {
         return divide(numberA, numberB);
     }
-    if(operation == '^')
+    else if(operation == '^')
     {
         return exp(numberA, numberB);
     }
+    else
+    {
+        return 0;
+    }  
 }
 
 //metodos privados com as operacoes de dois operandos
@@ -118,17 +136,29 @@ Calculator::multiply(double numberA, double numberB)//x*y
 int
 Calculator::divide (int numberA, int numberB)//x/y
 {
+    if(numberB == 0)
+    {
+        return std::numeric_limits<int>::max();
+    }
     return (numberA/numberB);
 }
 double
 Calculator::divide (double numberA, double numberB)//x/y
 {
+    if(numberB == 0)
+    {
+        return std::numeric_limits<double>::max();
+    }
     return (numberA/numberB);
 }
 
 int   
 Calculator::mod(int numberA, int numberB)//x%y
 {
+    if(numberB == 0)
+    {
+        return std::numeric_limits<int>::max();
+    }
     return (numberA%numberB);
 }
 
