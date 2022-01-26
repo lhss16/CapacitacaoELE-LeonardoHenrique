@@ -25,6 +25,7 @@ typeNumber evaluateNumber(typeNumber number)
 int
 main()
 {
+    Calculator calculadora;
     bool sair = false;
     do
     {
@@ -47,97 +48,81 @@ main()
         unsigned int optionIn{0};
         optionIn = evaluateNumber(optionIn);
 
+        double numberA{0};
+        double numberB{0};
+
+        int numberAInt{0};
+        int numberBInt{0};
+
+        unsigned int numberAUnsigned{0};
+
         switch (optionIn)
         {
             case 1:
-                Calculator calculadora;
-                cout << "Entre com o primeiro numero da operacao: \n" << endl;
-                double numberA{0};
+                cout << "Entre com o primeiro numero da operacao: " << endl;
                 numberA = evaluateNumber(numberA);
-                cout << "Entre com o segundo numero da operacao: \n" << endl;
-                double numberB{0};
+                cout << "Entre com o segundo numero da operacao: " << endl;
                 numberB = evaluateNumber(numberB);            
                 cout << numberA << "+" << numberB << " = " <<
                 calculadora.calc(numberA, '+', numberB) << endl;
                 break;
             case 2:
-                Calculator calculadora;
-                cout << "Entre com o primeiro numero da operacao: \n" << endl;
-                double numberA{0};
+                cout << "Entre com o primeiro numero da operacao: " << endl;
                 numberA = evaluateNumber(numberA);
-                cout << "Entre com o segundo numero da operacao: \n" << endl;
-                double numberB{0};
+                cout << "Entre com o segundo numero da operacao: " << endl;
                 numberB = evaluateNumber(numberB);            
                 cout << numberA << "-" << numberB << " = " <<
                 calculadora.calc(numberA, '-', numberB) << endl;
                 break;
             case 3:
-                Calculator calculadora;
-                cout << "Entre com o primeiro numero da operacao: \n" << endl;
-                double numberA{0};
+                cout << "Entre com o primeiro numero da operacao: " << endl;
                 numberA = evaluateNumber(numberA);
-                cout << "Entre com o segundo numero da operacao: \n" << endl;
-                double numberB{0};
+                cout << "Entre com o segundo numero da operacao: " << endl;
                 numberB = evaluateNumber(numberB);            
                 cout << numberA << "*" << numberB << " = " <<
                 calculadora.calc(numberA, '*', numberB) << endl;
                 break;
             case 4:
-                Calculator calculadora;
-                cout << "Entre com o primeiro numero da operacao: \n" << endl;
-                double numberA{0};
+                cout << "Entre com o primeiro numero da operacao: " << endl;
                 numberA = evaluateNumber(numberA);
-                cout << "Entre com o segundo numero da operacao: \n" << endl;
-                double numberB{0};
+                cout << "Entre com o segundo numero da operacao: " << endl;
                 numberB = evaluateNumber(numberB);            
                 cout << numberA << "/" << numberB << " = " <<
                 calculadora.calc(numberA, '/', numberB) << endl;
                 break;
             case 5:
-                Calculator calculadora;
-                cout << "Entre com o primeiro numero da operacao: \n" << endl;
-                int numberA{0};
-                numberA = evaluateNumber(numberA);
-                cout << "Entre com o segundo numero da operacao: \n" << endl;
-                int numberB{0};
-                numberB = evaluateNumber(numberB);            
-                cout << numberA << "%" << numberB << " = " <<
-                calculadora.calc(numberA, '%', numberB) << endl;
+                cout << "Entre com o primeiro numero da operacao: " << endl;
+                numberAInt = evaluateNumber(numberAInt);
+                cout << "Entre com o segundo numero da operacao: " << endl;
+                numberBInt = evaluateNumber(numberBInt);            
+                cout << numberAInt << "%" << numberBInt << " = " <<
+                calculadora.calc(numberAInt, '%', numberBInt) << endl;
                 break;
             case 6:
-                Calculator calculadora;
-                cout << "Entre com o primeiro numero da operacao: \n" << endl;
-                double numberA{0};
+                cout << "Entre com o primeiro numero da operacao: " << endl;
                 numberA = evaluateNumber(numberA);
-                cout << "Entre com o segundo numero da operacao: \n" << endl;
-                double numberB{0};
+                cout << "Entre com o segundo numero da operacao: " << endl;
                 numberB = evaluateNumber(numberB);            
                 cout << numberA << "^(" << numberB << ") = " <<
                 calculadora.calc(numberA, '^', numberB) << endl;
                 break;
             case 7:
-                Calculator calculadora;
-                cout << "Entre com o numero da operacao: \n" << endl;
-                double numberA{0};
+                cout << "Entre com o numero da operacao: " << endl;
                 numberA = evaluateNumber(numberA);            
                 cout << numberA << "^(1/2)" << " = " <<
                 calculadora.calc(numberA, 'r') << endl;
                 break;
             case 8:
-                Calculator calculadora;
-                cout << "Entre com o numero da operacao: \n" << endl;
-                double numberA{0};
-                numberA = evaluateNumber(numberA);            
-                cout << numberA << "!" << " = " <<
-                calculadora.calc(numberA, '!') << endl;
+                cout << "Entre com o numero da operacao: " << endl;
+                numberAUnsigned = evaluateNumber(numberAUnsigned);            
+                cout << numberAUnsigned << "!" << " = " <<
+                calculadora.calc(numberAUnsigned, '!') << endl;
                 break;
             case 9:
-                Calculator calculadora;
-                cout << "Entre com o numero da operacao: \n" << endl;
-                double numberA{0};
-                numberA = evaluateNumber(numberA);            
-                cout << "Fibonacci(" << numberA  << ") = " <<
-                calculadora.calc(numberA, 'f') << endl;
+                cout << "Entre com o numero da operacao: " << endl;
+                numberAUnsigned = evaluateNumber(numberAUnsigned);            
+                cout << "Fibonacci(" << numberAUnsigned  << ") = " <<
+                calculadora.calc(numberAUnsigned, 'f') << endl;
                 break;
             case 0:
                 respostaValida = true;
