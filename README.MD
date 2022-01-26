@@ -36,3 +36,5 @@ Salve este arquivo como DesafioExtra-seunome.py
 
 O programa funciona utilizando uma classe calculadora que calcula os valores e sao passados para o programa.
 Essa classe calculadora é baseada em funcoes definidas no header operations.h. Este header tem funcoes templates para a calculadora, deixando o programa geral.
+
+É passado pro programa a operacao desejada e quais sao os operandos

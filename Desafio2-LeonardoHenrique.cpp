@@ -1,7 +1,15 @@
-#include<sstream>
-#include<iostream>
-#include<string>
-#include "calculator.h"
+/*
+Descrição: interface com o usuario para utilizacao da classe Calculator
+Implementa um menu de interação que busca a operacao que o usuario deseja
+E os operandos para ser manipulados pela classe Calculator
+
+Desenvolvido por: Leonardo Henrique Souza da Silva
+*/
+
+#include<sstream>    //utilizacao para conversao da entrada string para double/int
+#include<iostream>   //interfaceamento com o usuario atraves da CLI
+#include<string>     //manuseio de strings
+#include "calculator.h" //utilizacao da classe Calculator
 
 using namespace std;
 

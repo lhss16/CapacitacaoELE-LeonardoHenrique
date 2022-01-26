@@ -6,6 +6,7 @@
 #and the commands are also optional, 
 #but you have to have one or the other.
 
+
 CC = g++
 LD = g++
 #compilador utilizado
@@ -17,7 +18,7 @@ LFLAGS = -Wall -std=c++14
 
 
 DESAFIO2 = Desafio2-LeonardoHenrique.o calculator.o
-#objetos necessarios 
+#objetos necessarios para o executavel desafio2
 
 EXECS = desafio2
 #nome do executavel do programa

@@ -1,7 +1,13 @@
-#include <cmath>
-#include <limits>
-#include "calculator.h"
-#include "operations.h"
+/*
+Descrição: Implementação da classe Calculator que possui diversas funcoes
+de uma calculadora.
+
+Funcionamento basico é a entrada da operacoa e os operandos e retornando o valor
+
+Desenvolvido por: Leonardo Henrique Souza da Silva
+*/
+#include "calculator.h"  //definicao da classe calculator definida aqui
+#include "operations.h"  //funcoes templates utilizadas nesta classe
 
 //metodo publico para calculo de uma operacao passada de um operando
 unsigned int

@@ -1,3 +1,9 @@
+/*
+Definicao de funcoes matematicas templates
+
+Desenvolvido por: Leonardo Henrique Souza da Silva
+*/
+
 #include <cmath>
 #include <limits>
 
