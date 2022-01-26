@@ -1,9 +1,6 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-//necessario para utilizar o objeto da classe string que contem o valor passado pelo usuario
-#include <string>
-
 //classe que contem as operacoes e metodos necessarios para a operacao da Calculator
 class Calculator
 {
