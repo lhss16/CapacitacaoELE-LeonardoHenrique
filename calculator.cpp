@@ -1,64 +1,85 @@
+#include <sstream>
 #include <cmath>
 #include "calculator.h"
 
-Calculator::Calculator(){}
-
-Calculator::Calculator(char operation, std::string numberA)
-{
-    char validOperations[3] = {'f','r','c'};
-    for(unsigned long int counter{0}; counter < 3; counter++)
-    {
-    }
-    /*
-    if (verifyIsInt == true)
-    {
-            calc(operation, numberA);
-    }*/
-}
-
-//construtor que inicia realizando uma operacao com dois operandos
-Calculator::Calculator(char operation, std::string numberA, std::string numberB)
-{
-
-}
-
 //metodo publico para calculo de uma operacao passada de um operando
 unsigned int
-Calculator::calc(char operation, unsigned int numberA)
+Calculator::calc(unsigned int numberA, char operation)
 {
-
-    
+    if(operation == '!')
+    {
+        return fatorial(numberA); 
+    }
+    if(operation == 'f')
+    {
+        return fibonacci(numberA);
+    }
+    if(operation == 'r')
+    {
+        return root(numberA);
+    }
 }
 double
-Calculator::calc(char operation, double numberA)
+Calculator::calc(double numberA, char operation)
 {
-
-    
+    if(operation == 'r')
+    {
+        return root(numberA);
+    }    
 }
 
 //metodo publico para calculo de uma operacao passada de dois operandos
 int
-Calculator::calc(char operation, int numberA, int numberB)
+Calculator::calc(int numberA, char operation, int numberB)
 {
-
+    if(operation == '+')
+    {
+        return add(numberA, numberB);
+    }
+    if(operation == '-')
+    {
+        return sub(numberA, numberB);
+    }
+    if(operation == '*')
+    {
+        return multiply(numberA, numberB);
+    }
+    if(operation == '/')
+    {
+        return divide(numberA, numberB);
+    }
+    if(operation == '%')
+    {
+        return mod(numberA, numberB);
+    }
+    if(operation == '^')
+    {
+        return exp(numberA, numberB);
+    }
 }
 double
-Calculator::calc(char operation, double numberA, double numberB)
+Calculator::calc(double numberA, char operation, double numberB)
 {
-
-}
-
-//metodo privado que verifica se a entrada eh int (retorna true) ou double (retorna false)
-bool Calculator::verifyIsInt(std::string numberA)
-{
-    for(unsigned long int counter{0}; counter < numberA.size(); counter++)
+    if(operation == '+')
     {
-        if (numberA.at(counter) == '.')
-        {
-            return false;
-        }
+        return add(numberA, numberB);
     }
-    return true;
+    if(operation == '-')
+    {
+        return sub(numberA, numberB);
+    }
+    if(operation == '*')
+    {
+        return multiply(numberA, numberB);
+    }
+    if(operation == '/')
+    {
+        return divide(numberA, numberB);
+    }
+    if(operation == '^')
+    {
+        return exp(numberA, numberB);
+    }
 }
 
 //metodos privados com as operacoes de dois operandos

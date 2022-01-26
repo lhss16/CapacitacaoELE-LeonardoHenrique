@@ -8,24 +8,14 @@
 class Calculator
 {
     public:
-        //construtor generico de um objeto da classe Calculator
-        Calculator();
-        //construtor que inicia realizando uma operacao com um operando
-        Calculator(char operation, std::string numberA);
-        //construtor que inicia realizando uma operacao com dois operandos
-        Calculator(char operation, std::string numberA, std::string numberB);
-        
         //metodo publico para calculo de uma operacao passada de um operando
-        unsigned int calc(char operation, unsigned int numberA);
-        double calc(char operation, double numberA);
+        unsigned int calc(unsigned int numberA, char operation);
+        double calc(double numberA, char operation);
         //metodo publico para calculo de uma operacao passada de dois operandos
-        int calc(char operation, int numberA, int numberB);
-        double calc(char operation, double numberA, double numberB);
+        int calc(int numberA, char operation, int numberB);
+        double calc(double numberA, char operation, double numberB);
 
     private:
-        //metodo privado que verifica se a entrada eh int (retorna true) ou double (retorna false)
-        bool verifyIsInt(std::string numberA);
-        
         //metodos privados com as operacoes de dois operandos
         int add (int numberA, int numberB);       //x+y
         int sub (int numberA, int numberB);       //x-y
@@ -39,10 +29,10 @@ class Calculator
         double multiply (double numberA, double numberB);  //x*y
         double divide (double numberA, double numberB);    //x/y
         double exp(double numberA, double numberB);        //x^y
+        
         //metodos privados com as operacoes de um operando
         unsigned int root(unsigned int numberA);       //x^(1/2)
         double root(double numberA);       //x^(1/2)
-
         unsigned int fatorial(unsigned int numberA);                  //x*(x-1)*(x-2)....*1
         unsigned int fibonacci(unsigned int numberA);                 //x(n-1) + x(n-2)
 };
